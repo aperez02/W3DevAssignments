@@ -1,0 +1,92 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?cf0zbh');
+	src:url('fonts/icomoon.eot?cf0zbh#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?cf0zbh') format('truetype'),
+		url('fonts/icomoon.woff?cf0zbh') format('woff'),
+		url('fonts/icomoon.svg?cf0zbh#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	font-family: Roboto, Noto, sans-serif;
+}
+
+body {
+	background: #F5F5F5;
+}
+
+h1 {
+	background: #3F51B5;
+	color: #FFF;
+	padding: 15px 0px 15px 0px;
+	text-align: center;
+	
+	margin-bottom: 20px;
+
+	-webkit-box-shadow: 0px 3px 5px #B2B2B2;
+	box-shadow: 0px 3px 5px #B2B2B2;
+}
+
+.entries article {
+	background: #FAFAFA;
+	padding: 20px;
+	border-bottom: 1px solid #D7D7D7;
+}
+
+.entries article:first-of-type {
+	border-top: 1px solid #D7D7D7;
+}
+
+.entries article p {
+	padding: 10px 0px 10px 0px;
+}
+
+.entries article.disclosure_control {
+	position: relative;
+	padding: 20px 40px 20px 20px;
+
+	-webkit-transition: background 0.1s;
+	transition: background 0.1s;
+}
+
+.entries article.disclosure_control:active {
+	background: #E0E0E0;
+}
+
+.entries article.disclosure_control:after {
+	font-family: 'icomoon';
+	content: "\e902";
+	speak: none;
+	font-size: 16px;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	
+	margin-top: -8px;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.entries article.disclosure_control.collapse:after {
+	content: "\e901";
+}
+
+.entries article.disclosure_control p {
+	opacity: 1;
+	height: auto;
+
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+.entries article.disclosure_control.collapse p {
+	visibility: hidden;
+	opacity: 0;
+	padding: 0;
+	height: 0;
+
+	-webkit-transition: visibility 0s 0.3s, opacity 0.3s, padding 0.5s linear, height 0s 0.5s;
+	transition: visibility 0s 0.3s, opacity 0.3s, padding 0.5s linear, height 0s 0.5s;
+}
