@@ -31,26 +31,26 @@ h1 {
 
 .entries article {
 	background: #FAFAFA;
-	padding: 20px;
+	padding: 15px;
 	border-bottom: 1px solid #D7D7D7;
+}
+
+.entries article h2 {
+	margin: 5px 0px;
 }
 
 .entries article:first-of-type {
 	border-top: 1px solid #D7D7D7;
 }
 
-.entries article p {
-	padding: 10px 0px 10px 0px;
-}
-
 .entries article.disclosure_control {
 	position: relative;
-	padding: 20px 40px 20px 20px;
+	padding: 15px 40px 15px 15px;
 
 	-webkit-transition: background 0.1s;
 	transition: background 0.1s;
-
 }
+
 
 .entries article.disclosure_control:active {
 	background: #E0E0E0;
@@ -76,25 +76,22 @@ h1 {
 }
 
 .entries article.disclosure_control p {
-	opacity: 1;
-	height: auto;
-
+	
 	/* hardware accelerated transitions */
-	-webkit-transform: translate3d(0,0,0);
+	/*-webkit-transform: translate3d(0,0,0);
 	-moz-transform: translate3d(0,0,0);
 	-ms-transform: translate3d(0,0,0);
 	-o-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
+*/
+	max-height: 100px;
+	opacity: 1;
 
-	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
+	-webkit-transition: visibility 0s 0.3s, opacity 0.3s, max-height 0.3s;
+	transition: visibility 0s 0.3s, opacity 0.3s, max-height 0.3s;
 }
 .entries article.disclosure_control.collapse p {
 	visibility: hidden;
 	opacity: 0;
-	padding: 0;
-	height: 0;
-
-	-webkit-transition: visibility 0s 0.3s, opacity 0.3s, padding 0.5s linear, height 0s 0.5s;
-	transition: visibility 0s 0.3s, opacity 0.3s, padding 0.5s linear, height 0s 0.5s;
+	max-height: 0;
 }
