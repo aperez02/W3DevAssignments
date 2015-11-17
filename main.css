@@ -1,12 +1,37 @@
+/* IcoMoon fonts */
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?cf0zbh');
-	src:url('fonts/icomoon.eot?cf0zbh#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.ttf?cf0zbh') format('truetype'),
-		url('fonts/icomoon.woff?cf0zbh') format('woff'),
-		url('fonts/icomoon.svg?cf0zbh#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?mgovu3');
+	src:url('fonts/icomoon.eot?mgovu3#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?mgovu3') format('truetype'),
+		url('fonts/icomoon.woff?mgovu3') format('woff'),
+		url('fonts/icomoon.svg?mgovu3#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-edit:before {
+	content: "\e900";
+}
+.icon-delete:before {
+	content: "\e904";
+}
+.icon-mode_edit:before {
+	content: "\e901";
 }
 
 * {
@@ -17,80 +42,122 @@ body {
 	background: #F5F5F5;
 }
 
-h1 {
-	background: #3F51B5;
+header {
+	background: #607D8B;
 	color: #FFF;
-	padding: 15px 0px 15px 0px;
-	text-align: center;
-	
-	margin-bottom: 20px;
 
 	-webkit-box-shadow: 0px 3px 5px #B2B2B2;
 	box-shadow: 0px 3px 5px #B2B2B2;
+
+	padding: 15px 10px 15px 10px;
+}
+
+header > h1 {
+	font-size: 1.4em;
+	display: inline-block;
+}
+
+header button {
+	float: right;
+	display: inline-block;
 }
 
 .entries article {
 	background: #FAFAFA;
+	border-radius: 2px;
 	padding: 15px;
-	border-bottom: 1px solid #D7D7D7;
+	margin: 10px auto;
+	width: 85%;
+
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
 }
 
-.entries article h2 {
+.entries article .message {
+	padding: 10px 0px;
 	margin: 5px 0px;
+
+	white-space: pre-wrap;
+}
+.entries article .date {
+	font-size: 0.7em;
+	color: #444;
 }
 
-.entries article:first-of-type {
-	border-top: 1px solid #D7D7D7;
+.entries article button {
+	color: #646464;
+	float: right;
+	margin: 5px;
 }
 
-.entries article.disclosure_control {
-	position: relative;
-	padding: 15px 40px 15px 15px;
-
-	-webkit-transition: background 0.1s;
-	transition: background 0.1s;
+.entries article [class^="icon-"], .entries article [class*=" icon-"] {
+	font-size: 1.1em;
+}
+.show {
+	display: block;
+}
+.hide {
+	display: none;
 }
 
-
-.entries article.disclosure_control:active {
-	background: #E0E0E0;
+form {
+	margin: 15px auto;
+	width: 50%;
 }
 
-.entries article.disclosure_control:after {
-	font-family: 'icomoon';
-	content: "\e902";
-	speak: none;
-	font-size: 16px;
-	position: absolute;
-	top: 50%;
-	right: 10px;
-	
-	margin-top: -8px;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-.entries article.disclosure_control.collapse:after {
-	content: "\e901";
+label {
+	display: block;
+	width: auto;
+	padding: 5px 0px;
 }
 
-.entries article.disclosure_control p {
-	
-	/* hardware accelerated transitions */
-	-webkit-transform: translate3d(0,0,0);
-	-moz-transform: translate3d(0,0,0);
-	-ms-transform: translate3d(0,0,0);
-	-o-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-
-	max-height: 500px;
-
-	-webkit-transition: visibility 0s 0.3s, opacity 0.3s, max-height 0.3s;
-	transition: visibility 0s 0.3s, opacity 0.3s, max-height 0.3s;
+input, textarea {
+	padding: 5px;
+	margin: 10px 0px;
 }
-.entries article.disclosure_control.collapse p {
-	visibility: hidden;
-	opacity: 0;
-	max-height: 0;
+
+input:not([type="checkbox"]), textarea {
+	display: block;
+	width: 95%;
 }
+
+button {
+	padding: 5px;
+	background: inherit;
+	border: none;
+	color: #4285f4; 
+
+	text-transform: uppercase;
+}
+
+header button {
+	color: #FFF;
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
