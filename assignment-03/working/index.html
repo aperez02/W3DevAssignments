@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='en'>
+  <head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobilize the Diary Application</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <header>
+        <h1>My Diary</h1>
+    </header>
+
+    <form id="entry_create_form" class="hide">
+      <label>Subject <input type="text" id="entry_subject" required></label>
+      <label>Message <textarea id="entry_message" required></textarea></label>
+      <label>Geolocation tag <input type="checkbox" id="entry_geo_tag" checked></label>
+
+      <button type="submit" id="entry_create_button">Create</button>
+      <button type="button" id="entry_cancel_create_button">Cancel</button>
+    </form>
+
+    <section class='entries'>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="Diary.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
+
